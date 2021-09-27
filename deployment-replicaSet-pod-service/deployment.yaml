@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: itsmetommy-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: itsmetommy-httpd
+        image: httpd
+        ports:
+        - name: web-port
+          containerPort: 80
